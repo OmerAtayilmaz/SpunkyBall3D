@@ -1993,7 +1993,7 @@ MonoBehaviour:
   hizlan: 0
   hassasiyetArtir: 0
   textSkor: {fileID: 1348463083}
-  textSkorWin: {fileID: 87040906}
+  textSkorWin: {fileID: 620723826}
 --- !u!4 &243649276
 Transform:
   m_ObjectHideFlags: 0
@@ -6916,9 +6916,9 @@ MonoBehaviour:
   - {fileID: 699946237063416307, guid: 3df97c49727e3954e8e280572cf465fa, type: 3}
   - {fileID: 6115028239016889630, guid: 7fcd20e0b78933941939f7f86be309c8, type: 3}
   - {fileID: 3534252922746225, guid: ca4241ffe9677f74082fe2328cbcfe45, type: 3}
-  - {fileID: 4284563205273141160, guid: de03f190fe5ce474295f7ccdca96ba7a, type: 3}
-  - {fileID: 3314327177358845043, guid: 21e999e5a81ac29499b7007c28895b3a, type: 3}
   - {fileID: 8269438436889474685, guid: e173b190acf18aa4596e9024d2e72036, type: 3}
+  - {fileID: 3314327177358845043, guid: 21e999e5a81ac29499b7007c28895b3a, type: 3}
+  - {fileID: 4284563205273141160, guid: de03f190fe5ce474295f7ccdca96ba7a, type: 3}
   - {fileID: 8591683259279198504, guid: 63c7f90a11b5b834a83db3040aa9fc0f, type: 3}
   path: {fileID: 1376946359}
   ilerle: 10
@@ -10062,7 +10062,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

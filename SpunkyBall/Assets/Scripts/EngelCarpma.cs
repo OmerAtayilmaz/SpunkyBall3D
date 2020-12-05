@@ -37,7 +37,7 @@ public class EngelCarpma : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="finish")
+        if(other.gameObject.tag=="Finish")
         {
             managerScr.textSkorWin.text = "+ " + PlayerPrefs.GetInt("toplanan");
             PlayerPrefs.SetInt("toplanan", 0);
