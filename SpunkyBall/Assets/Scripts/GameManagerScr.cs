@@ -53,7 +53,7 @@ public class GameManagerScr : MonoBehaviour
     //2-oyun durdu
     //3-oyun bitti
 
-
+    /*
 
     [Space]
     [Description("Motivasyon metinleri")]
@@ -66,6 +66,7 @@ public class GameManagerScr : MonoBehaviour
     [Header("mot TextMeshPro")]
     [SerializeField]
     private TextMeshProUGUI textMeshPro;
+    */
 
     [Space]
     [Description("METİN GÖSTERİCİ")]
@@ -215,6 +216,10 @@ public class GameManagerScr : MonoBehaviour
 
     }
 
+    [SerializeField]
+    [Description("sağ-sol algılama hassassiyeti")]
+    [Range(3,15)]
+    float algilamaHassasiyet = 5;
     void characterControl()
     {
 
@@ -224,31 +229,38 @@ public class GameManagerScr : MonoBehaviour
           
 
             Touch dokunma = Input.GetTouch(0);
+            /*  float xpos = dokunma.deltaPosition.x;
+              gameObject.transform.position += new Vector3(xpos, 0, 0);
+              */
 
-            if (dokunma.deltaPosition.x > 3)
-            {
-                hizlan += Time.deltaTime * 5;
-                hassasiyetArtir += Time.deltaTime * 2;
-                rb.velocity = new Vector3((hassasiyet+hassasiyetArtir) * Time.deltaTime, 0, (cSpeed + hizlan) * Time.deltaTime);
-               
+            if (dokunma.deltaPosition.x > algilamaHassasiyet)
+              {
+                    hizlan += Time.deltaTime * 5;
+                   hassasiyetArtir += Time.deltaTime * 2;
+                   rb.velocity = new Vector3((hassasiyet+hassasiyetArtir) * Time.deltaTime, 0, (cSpeed + hizlan) * Time.deltaTime);
 
-            }
-            if (dokunma.deltaPosition.x < -3)
-            {
-                hizlan += Time.deltaTime * 5;
-                hassasiyetArtir += Time.deltaTime * 2;
-                rb.velocity = new Vector3(-(hassasiyet + hassasiyetArtir) * Time.deltaTime, 0, (cSpeed + hizlan) * Time.deltaTime);
-          
 
-            }
-            else if(dokunma.phase==TouchPhase.Stationary)
-            {
+
+              }
+              if (dokunma.deltaPosition.x < -algilamaHassasiyet)
+               {
+                   hizlan += Time.deltaTime * 5;
+                   hassasiyetArtir += Time.deltaTime * 2;
+                   rb.velocity = new Vector3(-(hassasiyet + hassasiyetArtir) * Time.deltaTime, 0, (cSpeed + hizlan) * Time.deltaTime);
+
+
+               }
+
+               else if(dokunma.phase==TouchPhase.Stationary)
+               {
 
                 hizlan += Time.deltaTime * 2;
-           
+
                 rb.velocity = new Vector3(0, 0, (cSpeed + hizlan) * Time.deltaTime);
 
             }
+           
+
         }
         else
         {
@@ -277,7 +289,7 @@ public class GameManagerScr : MonoBehaviour
         }
     }
 
-  public  IEnumerator motText(string text)
+  /* public  IEnumerator motText(string text)
     {
         textMeshPro.text = text;
         textGosterici.SetActive(true);
@@ -288,6 +300,7 @@ public class GameManagerScr : MonoBehaviour
 
   
     }
+  */
 
    public void characterFalling()
     {

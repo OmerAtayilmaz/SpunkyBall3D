@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     //starttan önce başlar
     void Awake()
     {
+     //   PlayerPrefs.DeleteAll();
+       // PlayerPrefs.SetInt("diamond", 999);
         if (instance == null)
             instance = this;
         else

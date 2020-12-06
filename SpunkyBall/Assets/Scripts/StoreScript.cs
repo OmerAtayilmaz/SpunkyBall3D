@@ -69,7 +69,7 @@ public class StoreScript : MonoBehaviour
                   }
                  else
                   {
-                     StartCoroutine(gameManagerScr.motText("Yetersiz Altın!"));
+                    //yetersiz altin ekle
                   }
 
         }
