@@ -46,7 +46,6 @@ public class AchScript : MonoBehaviour
                 Debug.Log("Sonraki Elmas: " + PlayerPrefs.GetInt("diamond"));
                 PlayerPrefs.SetInt("id:"+id, 1);
                 gameObject.GetComponent<Button>().interactable = false;
-                StartCoroutine(yoneticiScr.motText("+" + odul + " Diamonds!"));
             }
             else
             {

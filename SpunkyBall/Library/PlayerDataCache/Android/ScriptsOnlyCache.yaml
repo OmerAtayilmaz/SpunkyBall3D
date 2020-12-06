@@ -36,6 +36,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Game.unity:
@@ -84,49 +87,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11730}
+      Script: {instanceID: 13952}
     - Class: 114
-      Script: {instanceID: 11734}
+      Script: {instanceID: 13972}
     - Class: 114
-      Script: {instanceID: 11754}
+      Script: {instanceID: 14056}
     - Class: 114
-      Script: {instanceID: 11840}
+      Script: {instanceID: 14156}
     - Class: 114
-      Script: {instanceID: 11940}
+      Script: {instanceID: 14158}
     - Class: 114
-      Script: {instanceID: 11944}
+      Script: {instanceID: 14160}
     - Class: 114
-      Script: {instanceID: 11982}
+      Script: {instanceID: 14198}
     - Class: 114
-      Script: {instanceID: 12134}
+      Script: {instanceID: 14348}
     - Class: 114
-      Script: {instanceID: 12146}
+      Script: {instanceID: 14360}
     - Class: 114
-      Script: {instanceID: 12398}
+      Script: {instanceID: 14536}
     - Class: 114
-      Script: {instanceID: 12424}
+      Script: {instanceID: 14610}
     - Class: 114
-      Script: {instanceID: 12456}
+      Script: {instanceID: 14636}
     - Class: 114
-      Script: {instanceID: 12560}
+      Script: {instanceID: 14668}
     - Class: 114
-      Script: {instanceID: 12934}
+      Script: {instanceID: 14768}
     - Class: 114
-      Script: {instanceID: 13130}
+      Script: {instanceID: 14860}
     - Class: 114
-      Script: {instanceID: 13146}
+      Script: {instanceID: 15092}
     - Class: 114
-      Script: {instanceID: 13352}
+      Script: {instanceID: 15144}
     - Class: 114
-      Script: {instanceID: 13418}
+      Script: {instanceID: 15332}
     - Class: 114
-      Script: {instanceID: 13422}
+      Script: {instanceID: 15346}
     - Class: 114
-      Script: {instanceID: 13518}
+      Script: {instanceID: 15550}
     - Class: 114
-      Script: {instanceID: 13592}
+      Script: {instanceID: 15614}
     - Class: 114
-      Script: {instanceID: 13806}
+      Script: {instanceID: 15618}
+    - Class: 114
+      Script: {instanceID: 15714}
+    - Class: 114
+      Script: {instanceID: 15788}
+    - Class: 114
+      Script: {instanceID: 16000}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -148,12 +157,6 @@ ScriptsOnlyBuild:
     - Class: 850595691
       Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: f087c23fbfa15475a0d110af46fb0496
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
   - hash:
       serializedVersion: 2
       Hash: 7aa74dc7c16bb7dd092a5e071d1175b8
@@ -306,7 +309,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 36673ecff57a1911a7b91ad59823252e
+      Hash: b9fd1725e261abf74c8983668dcddebd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManagerScr
@@ -430,6 +433,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: f087c23fbfa15475a0d110af46fb0496
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
   - hash:
       serializedVersion: 2
       Hash: c1d728126ff1918728036c59106d32b2
@@ -655,4 +664,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/FURKAN/Desktop/spunky.apk
+  playerPath: C:/Users/EXCALIBUR/Desktop/dx.apk
