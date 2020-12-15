@@ -142,6 +142,10 @@ public class GameManagerScr : MonoBehaviour
     [Header("TEXTSKORWIN")] 
     public Text textSkorWin;
 
+    public GoogleScr adsScript;
+
+    protected int adsSayac = 0;
+    protected int endSayaac = 0;
     public void TextLevelBilgiVer()
     {
 
@@ -151,7 +155,8 @@ public class GameManagerScr : MonoBehaviour
     }
     private void Awake()
     {
-
+        adsSayac = 0;
+        endSayaac = 0;
         OyunDurum = 0;
         hizlan = 0;
         hassasiyetArtir = 0;
@@ -168,6 +173,7 @@ public class GameManagerScr : MonoBehaviour
         rb = character.GetComponent<Rigidbody>();
         btnManager = GameObject.Find("UIManager").GetComponent<buttonManager>();
         pathBuilderScr = GameObject.Find("pathBuilder").GetComponent<PathBuilderScr>();
+        adsScript = GameObject.Find("ADSManager").GetComponent<GoogleScr>();
         ElmasYazdir();
         SaveColor();
     }
@@ -188,12 +194,30 @@ public class GameManagerScr : MonoBehaviour
                 TextLevelBilgiVer();
                 characterFalling();
                 break;
+            case 2:
+                if(adsSayac==0)
+                {
+                    //yenildi
+                    Debug.Log("çalıştı");
+                    if(Random.Range(1,4)==1)
+                    {
+                        adsScript.GameOver();
+                    }
+                 
+                    adsSayac = 1;
+                }
 
+                break;
 
             case 3:
                 //oyun bitti
-       
-                btnManager.PanelNextLevel();
+                if(endSayaac==0)
+                {
+                    btnManager.PanelNextLevel();
+                    endSayaac = 1;
+                }
+                
+           
                 break;
 
         }
@@ -381,6 +405,8 @@ public class GameManagerScr : MonoBehaviour
 
     public void Kaybettiniz()
     {
+
+     
         CancelInvoke("characterFalling");
         btnManager.panelGameOverControl();
         textSkor.text = "+ " + PlayerPrefs.GetInt("toplanan").ToString();

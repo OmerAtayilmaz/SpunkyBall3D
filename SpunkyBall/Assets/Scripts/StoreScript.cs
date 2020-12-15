@@ -20,6 +20,9 @@ public class StoreScript : MonoBehaviour
     
     void Start()
     {
+
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("beklenen_id", 0);
         gameManagerScr = GameObject.Find("GameManager").GetComponent<GameManagerScr>();
         satinAlbtn = GameObject.Find("BuyButton").GetComponent<Button>();
         veriGonder();
@@ -51,6 +54,7 @@ public class StoreScript : MonoBehaviour
         }
     }
 
+    public GameObject earn;
     public void satinAl()
     {
         Text textBuy = GameObject.Find("BuyText").GetComponent<Text>();
@@ -69,13 +73,17 @@ public class StoreScript : MonoBehaviour
                   }
                  else
                   {
-                    //yetersiz altin ekle
-                  }
+                earn.SetActive(true);
+                PlayerPrefs.SetInt("beklenen_id", id);
+                
+
+            }
 
         }
         //zaten satın alınmışsa giy
         else if(PlayerPrefs.GetInt("alindi:" + id)==1)
         {
+            earn.SetActive(false);
             gameManagerScr.SaveColor();
             PlayerPrefs.SetInt("durum:" + id, 1);
         }

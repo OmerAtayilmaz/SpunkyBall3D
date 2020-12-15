@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds.Api;
 using System;
-
+using UnityEngine.UI;
 public class GoogleScr : MonoBehaviour
 {
     private InterstitialAd interstitial;
@@ -47,15 +47,18 @@ public class GoogleScr : MonoBehaviour
 
     public void GameOver()
     {
+       
         if (interstitial.IsLoaded())
         {
             interstitial.Show();
-           
+            Debug.Log("yüklendi ama göstermiyor");
+
 
         }
         else
         {
             RequestInterstitial();
+            Debug.Log("yüklenmedi");
         }
     }
 
@@ -110,10 +113,13 @@ public class GoogleScr : MonoBehaviour
         AdRequest request = new AdRequest.Builder().Build();
         // Load the rewarded ad with the request.
         this.rewardedAd.LoadAd(request);
+
+       
     }
 
     public void OdulluReklam()
     {
+        CreateAndLoadRewardedAd();
         if (this.rewardedAd.IsLoaded())
         {
             this.rewardedAd.Show();
@@ -148,15 +154,30 @@ public class GoogleScr : MonoBehaviour
                              + args.Message);
     }
 
+  
 
-
+ 
     public void HandleUserEarnedReward(object sender, Reward args)
     {
-        string type = args.Type;
-        double amount = args.Amount;
-        MonoBehaviour.print(
-            "HandleRewardedAdRewarded event received for "
-                        + amount.ToString() + " " + type);
+        if (GameObject.Find("GameManager").GetComponent<GameManagerScr>().OyunDurum == 2)
+        {
+            GameObject.Find("GameManager").GetComponent<GameManagerScr>().OyunDurum = 1;
+            GameObject.Find("Character").gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            GameObject.Find("Character").gameObject.transform.position = new Vector3(0, 1, 0);
+            GameObject.Find("PanelKaybettiniz").gameObject.SetActive(false);
+        }
+        if(GameObject.Find("GameManager").GetComponent<GameManagerScr>().OyunDurum ==1)
+        {
+            Debug.Log("Çalıştı");
+            PlayerPrefs.SetInt("diamond", PlayerPrefs.GetInt("diamond") + PlayerPrefs.GetInt("toplanan"));
+            GameObject.Find("AdsButton").gameObject.GetComponent<Button>().enabled = false ;
+        }
+        else if (PlayerPrefs.GetInt("beklenen_id")!=0)
+        {
+            GameObject.Find("WatchandEarn").gameObject.SetActive(false);
+            PlayerPrefs.SetInt("alindi:" + PlayerPrefs.GetInt("beklenen_id"), 1);
+        }
+       
     }
 
 }
